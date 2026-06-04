@@ -292,6 +292,50 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Pricing pride — main site & landing */
+.pricing-pride {
+  background: var(--bg-card);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.pricing-pride__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.pricing-pride__title {
+  margin: 0 auto 0.65rem;
+  max-width: 28rem;
+  font-size: clamp(1.25rem, 4vw, 1.625rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--dark);
+}
+
+.pricing-pride__text {
+  margin: 0 auto;
+  max-width: 36rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (min-width: 992px) {
+  .pricing-pride {
+    padding: 2.5rem 0;
+  }
+
+  .pricing-pride__title {
+    max-width: 40rem;
+  }
+}
+
 /* Compact call / text actions */
 .contact-actions {
   display: flex;
