@@ -1,0 +1,192 @@
+/* Full website (index) — tablet & desktop layout. Landing page unchanged. */
+
+@media (min-width: 768px) {
+  body.site-home .wrap {
+    max-width: 64rem;
+  }
+
+  body.site-home .header-inner {
+    max-width: 64rem;
+  }
+
+  body.site-home .services,
+  body.site-home .reviews,
+  body.site-home .gallery-section,
+  body.site-home .benefits,
+  body.site-home .about,
+  body.site-home .cta-section,
+  body.site-home .area,
+  body.site-home .faq,
+  body.site-home .contact {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.site-home .wrap {
+    max-width: 72rem;
+  }
+
+  body.site-home .header-inner {
+    max-width: 72rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* Hero: copy left, photo right */
+  body.site-home .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  body.site-home .hero > .wrap.hero-layout {
+    max-width: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  body.site-home .hero > .hero-image.wrap {
+    max-width: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  body.site-home .hero-image img {
+    max-height: none;
+    min-height: 20rem;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  body.site-home .hero-city {
+    font-size: 3rem;
+  }
+
+  body.site-home .hero-role {
+    font-size: 2.35rem;
+  }
+
+  body.site-home .hero-subhead {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.125rem;
+  }
+
+  body.site-home .hero-proof {
+    justify-content: flex-start;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  body.site-home .pricing-banner {
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 24rem;
+  }
+
+  body.site-home .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  body.site-home .hero-cta-row .action-call--primary {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    flex: 0 1 auto;
+    min-width: 14rem;
+  }
+
+  body.site-home .hero-cta-row .action-text--link {
+    margin: 0;
+    align-self: center;
+  }
+
+  body.site-home .hero-area-line {
+    text-align: left;
+  }
+
+  /* Services: 3 columns */
+  body.site-home .service-categories {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  body.site-home .action-call--section {
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Reviews: show more of each card */
+  body.site-home .review-slide {
+    flex: 0 0 42%;
+  }
+
+  body.site-home .btn-show-all {
+    width: auto;
+    max-width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  /* Benefits: 4 across */
+  body.site-home .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Gallery: larger gaps */
+  body.site-home .gallery-grid {
+    gap: 1rem;
+  }
+
+  /* About */
+  body.site-home .about-grid {
+    gap: 2.5rem;
+  }
+
+  body.site-home .about-photo {
+    flex: 0 0 45%;
+  }
+
+  body.site-home .about-text .action-call--section {
+    margin-left: 0;
+  }
+
+  /* CTA band */
+  body.site-home .cta-section__title {
+    font-size: 1.75rem;
+  }
+
+  body.site-home .cta-section .action-call--primary {
+    max-width: 22rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.site-home .review-slide {
+    flex: 0 0 32%;
+  }
+
+  body.site-home .hero-city {
+    font-size: 3.5rem;
+  }
+
+  body.site-home .hero-role {
+    font-size: 2.75rem;
+  }
+}
