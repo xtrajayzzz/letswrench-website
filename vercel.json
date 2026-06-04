@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/ads.html",
+      "destination": "/mobile-mechanic",
+      "permanent": true
+    },
+    {
+      "source": "/ads",
+      "destination": "/mobile-mechanic",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",

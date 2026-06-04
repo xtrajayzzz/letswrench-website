@@ -36,7 +36,7 @@ Replace `YOUR_USERNAME` with your GitHub username. Sign in if Git asks.
 You get a live URL like: `https://letswrench-website.vercel.app`
 
 - Main site: `/` or `/index.html`
-- Google Ads page: `/ads.html`
+- Google Ads landing page: `/mobile-mechanic`
 
 ### 3. Custom domain (your real URL)
 
@@ -46,7 +46,7 @@ You get a live URL like: `https://letswrench-website.vercel.app`
 4. At your domain registrar (GoDaddy, Namecheap, etc.) → **DNS** → add those records
 5. Wait 5–60 minutes. HTTPS is automatic.
 
-**Google Ads final URL:** `https://yourdomain.com/ads.html`
+**Google Ads final URL:** `https://yourdomain.com/mobile-mechanic`
 
 ---
 
@@ -84,7 +84,7 @@ Follow prompts. Run `vercel --prod` after changes. GitHub + Vercel is easier lon
 
 - [ ] Set GA4 ID in `js/tracking.js` (replace `G-XXXXXXXXXX`)
 - [ ] Test call/text links on your phone on the live URL
-- [ ] Point Google Ads to `https://yourdomain.com/ads.html`
+- [ ] Point Google Ads to `https://yourdomain.com/mobile-mechanic`
 
 ---
 
