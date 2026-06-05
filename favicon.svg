@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="LetsWrench">
   <rect width="48" height="48" rx="8" fill="#152238"/>
-  <text x="24" y="31" font-family="Arial Black, Arial, sans-serif" font-size="17" font-weight="900" font-style="italic" text-anchor="middle" fill="#ffffff">LW</text>
-  <path fill="#dc2626" d="M31.5 11.5 28 15l2 2 3.5-3.5 4.5 4.5-6 6a3.5 3.5 0 1 1-2-2l6-6-4.5-4.5Z"/>
+  <path fill="#dc2626" d="M30.2 9.8 26.4 13.6l1.6 1.6 3.8-3.8 5.2 5.2-9.2 9.2a4.8 4.8 0 1 1-2.8-2.8l9.2-9.2-5.2-5.2Z"/>
+  <circle cx="17.6" cy="30.4" r="4.8" fill="#dc2626"/>
 </svg>
