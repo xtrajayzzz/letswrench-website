@@ -8,7 +8,7 @@ Two pages for **LetsWrench** in Mesa, AZ — built mobile-first with tap-to-call
 
 | File | URL | Use for |
 |------|-----|---------|
-| **`index.html`** | `https://lets-wrench.com` | Full website — gallery, about, longer layout |
+| **`index.html`** | `https://lets-wrench.com` | Full website — about, services, reviews, FAQ |
 | **`mobile-mechanic.html`** | `https://lets-wrench.com/mobile-mechanic` | Google Ads & paid traffic — call-first landing page |
 
 Point your Google Ads final URL to: `https://lets-wrench.com/mobile-mechanic`

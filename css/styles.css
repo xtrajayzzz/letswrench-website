@@ -737,6 +737,17 @@ body {
 
 .about-photo {
   flex: 0 0 auto;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 @media (min-width: 768px) {

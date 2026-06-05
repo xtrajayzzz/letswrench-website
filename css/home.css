@@ -16,7 +16,6 @@
 
   body.site-home .services,
   body.site-home .reviews,
-  body.site-home .gallery-section,
   body.site-home .benefits,
   body.site-home .about,
   body.site-home .cta-section,
@@ -152,11 +151,6 @@
   /* Benefits: 4 across */
   body.site-home .benefits-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* Gallery: larger gaps */
-  body.site-home .gallery-grid {
-    gap: 1rem;
   }
 
   /* About */
