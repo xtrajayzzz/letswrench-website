@@ -72,9 +72,11 @@
     var total = reviews.length;
     var counterLabel = counter && counter.getAttribute("data-total-label");
     var totalDisplay = counterLabel || String(total);
+    var showAllLabel = showAllBtn && showAllBtn.getAttribute("data-total-label");
+    var showAllText = showAllLabel ? "See all " + showAllLabel + " reviews" : "See all " + total + " reviews";
 
     if (counter) counter.textContent = "1 of " + totalDisplay;
-    if (showAllBtn) showAllBtn.textContent = "See all " + total + " reviews";
+    if (showAllBtn) showAllBtn.textContent = showAllText;
 
     function updateCounter() {
       if (!counter || !track) return;
@@ -109,7 +111,7 @@
     if (showAllBtn && allGrid) {
       showAllBtn.addEventListener("click", function () {
         var expanded = allGrid.classList.toggle("is-visible");
-        showAllBtn.textContent = expanded ? "Hide reviews" : "See all " + total + " reviews";
+        showAllBtn.textContent = expanded ? "Hide reviews" : showAllText;
         showAllBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
         if (expanded) {
           allGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
