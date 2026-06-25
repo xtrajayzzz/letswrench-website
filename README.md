@@ -15,9 +15,9 @@ Point your Google Ads final URL to: `https://lets-wrench.com/mobile-mechanic`
 
 Old `/ads.html` links redirect to `/mobile-mechanic` automatically.
 
-## Mesa pages (paused)
+## Archived Mesa pages
 
-Arizona city pages (`mobile-mechanic-gilbert.html`, `mobile-mechanic-chandler.html`, `check-engine-light-mesa.html`) are kept in the repo but redirect to the homepage on deploy. Remove the redirects in `vercel.json` when you're ready to turn Mesa back on.
+Former Arizona city pages live in `_archive/mesa/` for reference only. Old URLs (`/mobile-mechanic-gilbert`, `/mobile-mechanic-chandler`, `/check-engine-light-mesa`) redirect to the homepage via `vercel.json`.
 
 ## Preview locally
 

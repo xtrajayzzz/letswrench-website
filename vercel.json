@@ -39,6 +39,11 @@
       "source": "/check-engine-light-mesa",
       "destination": "/",
       "permanent": false
+    },
+    {
+      "source": "/_archive/:path*",
+      "destination": "/",
+      "permanent": false
     }
   ],
   "headers": [
