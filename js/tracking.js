@@ -1,4 +1,17 @@
 (function () {
+  // Vercel Web Analytics (works on Vercel deployments only)
+  window.va =
+    window.va ||
+    function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+  if (!document.querySelector('script[src="/_vercel/insights/script.js"]')) {
+    var insights = document.createElement("script");
+    insights.defer = true;
+    insights.src = "/_vercel/insights/script.js";
+    document.head.appendChild(insights);
+  }
+
   var GA_ID = "G-XXXXXXXXXX"; // Replace with your GA4 measurement ID
 
   function trackEvent(name, params) {

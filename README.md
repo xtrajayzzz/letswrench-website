@@ -1,8 +1,8 @@
 # LetsWrench — Mobile Mechanic Website
 
-Two pages for **LetsWrench** in Mesa, AZ — built mobile-first with tap-to-call, reviews, and 24/7 messaging.
+Two pages for **LetsWrench** in Omaha, NE — built mobile-first with tap-to-call, reviews, and 24/7 messaging.
 
-**Phone:** (555) 555-5555 (placeholder) · **Hours:** 24/7
+**Phone:** (531) 999-6507 · **Hours:** 24/7 · **Market:** Omaha & greater metro
 
 ## Which page to use
 
@@ -14,6 +14,10 @@ Two pages for **LetsWrench** in Mesa, AZ — built mobile-first with tap-to-call
 Point your Google Ads final URL to: `https://lets-wrench.com/mobile-mechanic`
 
 Old `/ads.html` links redirect to `/mobile-mechanic` automatically.
+
+## Mesa pages (paused)
+
+Arizona city pages (`mobile-mechanic-gilbert.html`, `mobile-mechanic-chandler.html`, `check-engine-light-mesa.html`) are kept in the repo but redirect to the homepage on deploy. Remove the redirects in `vercel.json` when you're ready to turn Mesa back on.
 
 ## Preview locally
 
@@ -27,14 +31,14 @@ npx serve . -p 3000
 ## Google Ads A/B testing
 
 1. Run ads to `/mobile-mechanic` (version A).
-2. Later, duplicate to e.g. `mesa.html` with one change (headline, hero, etc.).
+2. Later, duplicate to e.g. `bellevue.html` with one change (headline, hero, etc.).
 3. Split ad groups or use UTM tags to compare call volume.
 4. In `js/tracking.js`, replace `G-XXXXXXXXXX` with your GA4 ID to track call/text clicks.
 
 ## Files
 
-- `index.html` — full site
-- `mobile-mechanic.html` — Google Ads landing page
+- `index.html` — full site (Omaha)
+- `mobile-mechanic.html` — Google Ads landing page (Omaha)
 - `css/styles.css` + `css/ads.css` — styling
 - `js/reviews.js` + `js/avatars.js` + `js/main.js` — reviews carousel
 - `js/tracking.js` — GA4 call/text click events
