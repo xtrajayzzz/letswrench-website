@@ -1,11 +1,19 @@
 (function () {
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function scrollBehavior() {
+    return prefersReducedMotion() ? "auto" : "smooth";
+  }
+
   function starsHtml() {
     return '<span class="stars" aria-label="5 out of 5 stars">★★★★★</span>';
   }
 
   function avatarImgHtml(url, seed) {
     return (
-      '<img class="review-avatar" src="' + url + '" alt="" width="44" height="44" ' +
+      '<img class="review-avatar" src="' + url + '" alt="" role="presentation" width="44" height="44" ' +
       'loading="lazy" decoding="async" referrerpolicy="no-referrer" ' +
       'data-avatar-seed="' + seed + '" ' +
       'onerror="handleAvatarError(this)">'
@@ -59,7 +67,11 @@
     var showAllLabel = showAllBtn && showAllBtn.getAttribute("data-total-label");
     var showAllText = showAllLabel ? "See all " + showAllLabel + " reviews" : "See all " + total + " reviews";
 
-    if (counter) counter.textContent = "1 of " + totalDisplay;
+    if (counter) {
+      counter.setAttribute("aria-live", "polite");
+      counter.setAttribute("aria-atomic", "true");
+      counter.textContent = "1 of " + totalDisplay;
+    }
     if (showAllBtn) showAllBtn.textContent = showAllText;
 
     function updateCounter() {
@@ -75,8 +87,18 @@
       var slide = track.querySelector(".review-slide");
       if (!slide) return;
       var amount = (slide.offsetWidth + 12) * direction;
-      track.scrollBy({ left: amount, behavior: "smooth" });
+      track.scrollBy({ left: amount, behavior: scrollBehavior() });
     }
+
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        scrollBySlide(-1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        scrollBySlide(1);
+      }
+    });
 
     if (prevBtn) {
       prevBtn.addEventListener("click", function () {
@@ -98,28 +120,45 @@
         showAllBtn.textContent = expanded ? "Hide reviews" : showAllText;
         showAllBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
         if (expanded) {
-          allGrid.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          allGrid.scrollIntoView({ behavior: scrollBehavior(), block: "nearest" });
         }
       });
     }
   }
 
+  function setFaqItemState(item, expanded) {
+    if (!item) return;
+    var btn = item.querySelector(".faq-question");
+    var answer = item.querySelector(".faq-answer");
+    if (btn) btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+    if (answer) answer.setAttribute("aria-hidden", expanded ? "false" : "true");
+  }
+
   function initFaq() {
     var faqButtons = document.querySelectorAll(".faq-question");
 
-    faqButtons.forEach(function (btn) {
+    faqButtons.forEach(function (btn, index) {
+      var item = btn.closest(".faq-item");
+      var answer = item && item.querySelector(".faq-answer");
+
+      if (answer) {
+        if (!answer.id) answer.id = "faq-answer-" + (index + 1);
+        btn.setAttribute("aria-controls", answer.id);
+      }
+
+      setFaqItemState(item, false);
+
       btn.addEventListener("click", function () {
-        var item = btn.closest(".faq-item");
         var isOpen = item.classList.contains("is-open");
 
         document.querySelectorAll(".faq-item.is-open").forEach(function (open) {
           open.classList.remove("is-open");
-          open.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          setFaqItemState(open, false);
         });
 
         if (!isOpen) {
           item.classList.add("is-open");
-          btn.setAttribute("aria-expanded", "true");
+          setFaqItemState(item, true);
         }
       });
     });

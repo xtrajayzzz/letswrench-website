@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=5">
   <link rel="stylesheet" href="css/home.css?v=3">
   <!-- Replace G-XXXXXXXXXX with your Google Analytics 4 ID -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
@@ -372,7 +372,7 @@
       <div class="wrap">
         <h2 class="section-heading">Prefer we call you?</h2>
         <p class="section-intro">Leave your number — we'll call you back fast.</p>
-        <form class="lead-form" action="https://formsubmit.co/Support@lets-wrench.com" method="POST">
+        <form class="lead-form" action="https://formsubmit.co/Support@lets-wrench.com" method="POST" aria-describedby="lead-form-note">
           <input type="hidden" name="_subject" value="New lead — lets-wrench.com">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
@@ -393,7 +393,7 @@
             <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy">Privacy Policy</a>.</span>
           </label>
           <button type="submit" class="lead-form-submit" data-track="form">Request a callback</button>
-          <p class="lead-form-note">We'll only use this to call or text you back about your car. Message/data rates may apply.</p>
+          <p class="lead-form-note" id="lead-form-note">We'll only use this to call or text you back about your car. Message/data rates may apply.</p>
         </form>
       </div>
     </section>
@@ -454,7 +454,7 @@
 
   <script src="js/avatars.js?v=3"></script>
   <script src="js/reviews.js?v=3"></script>
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
   <script src="js/tracking.js?v=4"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
