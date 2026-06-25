@@ -27,4 +27,4 @@ Both `index.html` and `mobile-mechanic.html` already point at these paths.
 
 **Tip:** Use the **LW wrench icon** from your logo (crop square), not the full wide logo — it reads better in a tiny tab.
 
-Replace `hero.jpg` with your own on-site mechanic photo when ready.
+Replace `hero.jpg` with your own on-site mechanic photo when ready. Current hero shows a mobile mechanic working under the hood beside a service van.
