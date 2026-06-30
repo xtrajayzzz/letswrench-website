@@ -82,9 +82,40 @@ Follow prompts. Run `vercel --prod` after changes. GitHub + Vercel is easier lon
 
 ## Before ads go live
 
-- [ ] Set GA4 ID in `js/tracking.js` (replace `G-XXXXXXXXXX`)
+- [ ] Set your IDs in `js/site-config.js` (see **Analytics & Search Console** below)
 - [ ] Test call/text links on your phone on the live URL
 - [ ] Point Google Ads to `https://yourdomain.com/mobile-mechanic`
+
+---
+
+## Analytics & Search Console
+
+Edit **`js/site-config.js`** (one file for both):
+
+```javascript
+window.LETS_WRENCH_CONFIG = {
+  ga4Id: "G-XXXXXXXXXX",      // your GA4 Measurement ID
+  gscVerification: "abc123…" // Search Console HTML tag content value
+};
+```
+
+### Google Analytics 4 (GA4)
+
+1. Go to [analytics.google.com](https://analytics.google.com) → **Admin** (gear) → **Create property** → name it LetsWrench
+2. **Data streams** → **Add stream** → **Web** → URL: `https://lets-wrench.com`
+3. Copy the **Measurement ID** (`G-XXXXXXXXXX`) into `ga4Id` in `site-config.js`
+4. Deploy. In GA4 → **Reports** → **Realtime**, open your site and confirm a visit appears
+5. Events tracked automatically: `click_call`, `click_text`, `form_submit` (via `js/tracking.js`)
+
+### Google Search Console
+
+1. Go to [search.google.com/search-console](https://search.google.com/search-console) → **Add property** → **URL prefix**: `https://lets-wrench.com`
+2. Choose **HTML tag** verification → copy only the `content="..."` value (not the whole tag)
+3. Paste into `gscVerification` in `site-config.js` → deploy
+4. Click **Verify** in Search Console
+5. **Sitemaps** → submit: `https://lets-wrench.com/sitemap.xml`
+
+**Note:** `/mobile-mechanic` is intentionally `noindex` (Google Ads only) and is **not** in the sitemap. Indexable pages: homepage, Bellevue, Papillion, check-engine-light-omaha, legal pages.
 
 ---
 

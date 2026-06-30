@@ -963,6 +963,19 @@ body {
   display: block;
 }
 
+.review-avatar--initials {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: unset;
+  border: none;
+  user-select: none;
+}
+
 .review-avatar--placeholder {
   object-fit: contain;
   padding: 4px;
@@ -983,11 +996,19 @@ body {
   color: var(--text-muted);
 }
 
+.review-date {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
 .review-text {
   margin: 0;
   font-size: 0.9375rem;
-  font-style: italic;
-  line-height: 1.5;
+  font-style: normal;
+  line-height: 1.55;
   color: var(--text);
 }
 
