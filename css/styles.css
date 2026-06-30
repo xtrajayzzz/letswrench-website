@@ -106,9 +106,9 @@ body {
 
 .logo img {
   display: block;
-  height: 3.75rem;
+  height: 4.5rem;
   width: auto;
-  max-width: min(12.5rem, 58vw);
+  max-width: min(5rem, 40vw);
   object-fit: contain;
   object-position: left center;
 }
@@ -120,8 +120,8 @@ body {
   }
 
   .logo img {
-    height: 4.25rem;
-    max-width: 14rem;
+    height: 5rem;
+    max-width: 5.5rem;
   }
 }
 
