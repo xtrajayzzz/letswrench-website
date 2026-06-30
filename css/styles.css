@@ -885,7 +885,6 @@ body {
 .review {
   margin: 0;
   padding: 1rem;
-  padding-right: 2.5rem;
   background: var(--bg);
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -945,7 +944,6 @@ body {
   gap: 0.65rem;
   align-items: flex-start;
   margin-bottom: 0.5rem;
-  padding-right: 1.25rem;
 }
 
 .review-avatar {
