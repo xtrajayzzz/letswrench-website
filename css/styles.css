@@ -254,12 +254,76 @@ body {
   margin-bottom: 1rem;
 }
 
+.trust-pill--reviews {
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 1rem;
+  max-width: min(100%, 18rem);
+}
+
+.trust-pill__stars {
+  display: block;
+  color: var(--star);
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.trust-pill__label {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.trust-pill__count {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.trust-pill__desc {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .trust-pill .stars {
   font-size: 0.75rem;
 }
 
 .trust-pill strong {
   color: #fff;
+}
+
+@media (min-width: 480px) {
+  .trust-pill--reviews {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+    max-width: none;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+  }
+
+  .trust-pill__stars {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .trust-pill__count {
+    font-size: 1.05rem;
+  }
+
+  .trust-pill__desc {
+    font-size: 0.875rem;
+  }
 }
 
 .hero-title {
