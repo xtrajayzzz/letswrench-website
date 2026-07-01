@@ -1,6 +1,8 @@
 (function () {
   var config = window.LETS_WRENCH_CONFIG || {};
-  var GA_ID = config.ga4Id || "G-XXXXXXXXXX";
+  var GA_ID = config.ga4Id || "";
+  var ADS_ID = config.googleAdsId || "";
+  var ADS_LEAD_LABEL = config.googleAdsLeadLabel || "";
 
   // Vercel Web Analytics (works on Vercel deployments only)
   window.va =
@@ -15,10 +17,49 @@
     document.head.appendChild(insights);
   }
 
-  function trackEvent(name, params) {
-    if (typeof gtag === "function") {
-      gtag("event", name, params || {});
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function () {
+      window.dataLayer.push(arguments);
+    };
+
+  function initGtag() {
+    var primaryId = ADS_ID || GA_ID;
+    if (!primaryId || primaryId.indexOf("XXXX") !== -1) return;
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(primaryId);
+    document.head.appendChild(s);
+
+    gtag("js", new Date());
+
+    if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
+      gtag("config", GA_ID);
     }
+    if (ADS_ID) {
+      gtag("config", ADS_ID);
+    }
+  }
+
+  function trackEvent(name, params) {
+    gtag("event", name, params || {});
+  }
+
+  function trackAdsLeadConversion() {
+    if (!ADS_ID) return;
+
+    if (ADS_LEAD_LABEL) {
+      gtag("event", "conversion", {
+        send_to: ADS_ID + "/" + ADS_LEAD_LABEL
+      });
+    }
+
+    trackEvent("generate_lead", {
+      page: window.location.pathname
+    });
   }
 
   document.addEventListener("click", function (e) {
@@ -49,17 +90,9 @@
     }
   });
 
-  if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    document.head.appendChild(s);
+  initGtag();
 
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
-    gtag("js", new Date());
-    gtag("config", GA_ID);
+  if (/^\/thanks\/?$/i.test(window.location.pathname)) {
+    trackAdsLeadConversion();
   }
 })();
