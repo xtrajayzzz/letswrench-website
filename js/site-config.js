@@ -10,5 +10,8 @@ window.LETS_WRENCH_CONFIG = {
   // Search Console: search.google.com → Add property → HTML tag method → paste content value only
   gscVerification: "",
   // Microsoft Clarity: clarity.microsoft.com → your project → Settings → Project ID
-  clarityId: "xiaxq1zspu"
+  clarityId: "xiaxq1zspu",
+  // Lead form (FormSubmit): primary inbox + CC copies (comma-separated for 2+ people)
+  formEmail: "jay@lets-wrench.com",
+  formCc: ""
 };

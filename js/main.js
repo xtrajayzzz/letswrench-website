@@ -387,8 +387,27 @@
   }
 
   function initLeadForm() {
-    document.querySelectorAll(".lead-form-page").forEach(function (input) {
-      input.value = window.location.href;
+    var config = window.LETS_WRENCH_CONFIG || {};
+    var formEmail = config.formEmail || "jay@lets-wrench.com";
+    var formCc = (config.formCc || "").trim();
+
+    document.querySelectorAll(".lead-form").forEach(function (form) {
+      form.setAttribute("action", "https://formsubmit.co/" + formEmail);
+
+      if (formCc) {
+        var ccInput = form.querySelector('input[name="_cc"]');
+        if (!ccInput) {
+          ccInput = document.createElement("input");
+          ccInput.type = "hidden";
+          ccInput.name = "_cc";
+          form.appendChild(ccInput);
+        }
+        ccInput.value = formCc;
+      }
+
+      form.querySelectorAll(".lead-form-page").forEach(function (input) {
+        input.value = window.location.href;
+      });
     });
   }
 
