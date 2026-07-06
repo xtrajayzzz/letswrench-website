@@ -3,6 +3,7 @@
   var GA_ID = config.ga4Id || "";
   var ADS_ID = config.googleAdsId || "";
   var ADS_LEAD_LABEL = config.googleAdsLeadLabel || "";
+  var CLARITY_ID = config.clarityId || "";
 
   // Vercel Web Analytics (works on Vercel deployments only)
   window.va =
@@ -23,6 +24,23 @@
     function () {
       window.dataLayer.push(arguments);
     };
+
+  function initClarity() {
+    if (!CLARITY_ID || document.querySelector('script[src*="clarity.ms/tag"]')) return;
+
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+  }
 
   function initGtag() {
     var primaryId = ADS_ID || GA_ID;
@@ -91,6 +109,7 @@
   });
 
   initGtag();
+  initClarity();
 
   if (/^\/thanks\/?$/i.test(window.location.pathname)) {
     trackAdsLeadConversion();

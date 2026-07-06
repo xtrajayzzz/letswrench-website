@@ -6,7 +6,9 @@ window.LETS_WRENCH_CONFIG = {
   googleAdsId: "AW-18213935114",
   // Optional: paste conversion label only (after the slash), e.g. "AbCdEfGh123"
   // From: send_to: 'AW-18213935114/AbCdEfGh123'
-  googleAdsLeadLabel: "",
+  googleAdsLeadLabel: "Lj7_CNr_8MscEIqwiu1D",
   // Search Console: search.google.com → Add property → HTML tag method → paste content value only
-  gscVerification: ""
+  gscVerification: "",
+  // Microsoft Clarity: clarity.microsoft.com → your project → Settings → Project ID
+  clarityId: "xiaxq1zspu"
 };
