@@ -13,5 +13,5 @@ window.LETS_WRENCH_CONFIG = {
   clarityId: "xiaxq1zspu",
   // Lead form (FormSubmit): primary inbox + CC copies (comma-separated for 2+ people)
   formEmail: "jay@lets-wrench.com",
-  formCc: ""
+  formCc: "jake@lets-wrench.com"
 };
