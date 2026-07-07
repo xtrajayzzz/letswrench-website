@@ -8,16 +8,12 @@ Two pages for **LetsWrench** in Omaha, NE — built mobile-first with tap-to-cal
 
 | File | URL | Use for |
 |------|-----|---------|
-| **`index.html`** | `https://lets-wrench.com` | Full website — SEO, organic traffic |
-| **`mobile-mechanic.html`** | `https://lets-wrench.com/mobile-mechanic` | Google Ads final URL — **same layout as homepage** (`noindex`) |
+| **`index.html`** | `https://lets-wrench.com` | Main site — call-first layout, logo + Call header |
+| **`mobile-mechanic.html`** | `https://lets-wrench.com/mobile-mechanic` | Google Ads — enhanced layout with trust strip & nav (`noindex`) |
 
 Point your Google Ads final URL to: `https://lets-wrench.com/mobile-mechanic`
 
-After editing `index.html`, regenerate the ads page:
-
-```powershell
-node scripts/build-ads-page.js
-```
+These two pages are **intentionally different**. Edit each file separately.
 
 Old `/ads.html` links redirect to `/mobile-mechanic` automatically.
 
