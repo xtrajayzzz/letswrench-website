@@ -321,15 +321,9 @@
 
 
 .lp-reviews {
-
   padding: 2rem 0;
-
-  border-top: none;
-
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.1);
-
+  border-top: 1px solid var(--border);
   background: var(--bg-card);
-
 }
 
 
@@ -357,11 +351,14 @@
 
 
 .lp-services {
-
   background: var(--bg);
-
   padding: 2rem 0;
+}
 
+.lp-services--after-hero {
+  border-top: none;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.1);
+  padding-top: 1.5rem;
 }
 
 
@@ -531,13 +528,50 @@
 
 
 @media (min-width: 768px) {
-
   .lp-ads {
-
     padding-bottom: 0;
+  }
+}
 
+.lp-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.25rem;
+}
+
+.lp-cta-secondary .lp-text {
+  display: inline;
+  padding: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .lp-ads .lp-subhead {
+    font-size: 1rem;
+    max-width: 19rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.45;
   }
 
+  .lp-ads .hero-badges {
+    margin-bottom: 0.875rem;
+  }
+
+  .lp-ads .lp-area-line {
+    font-size: 0.75rem;
+    margin-top: 0.625rem;
+  }
+
+  .lp-ads .hero-image img {
+    max-height: 12rem;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  .lp-services--after-hero {
+    padding-top: 1.25rem;
+  }
 }
 
 

@@ -326,7 +326,7 @@
     var pricingTitle = document.getElementById("pricing-city-title");
     if (pricingTitle) {
       pricingTitle.textContent =
-        "We pride ourselves on fair, competitive pricing in " + inPlace;
+        "Fair, competitive pricing in " + inPlace;
     }
 
     var finalTitle = document.querySelector(".lp-final__title");

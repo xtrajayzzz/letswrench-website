@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
-  <link rel="stylesheet" href="css/ads.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="css/ads.css?v=4">
 </head>
 <body class="lp-ads" data-ads-city="omaha">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -31,32 +31,38 @@
   <main id="main-content">
     <section class="lp-hero">
       <div class="wrap">
-        <div class="lp-trust-pill">
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <strong>350+</strong> five-star reviews from happy customers
-        </div>
+        <a href="#reviews" class="trust-pill trust-pill--reviews trust-pill--link" data-track="reviews-jump" aria-label="350 plus five-star reviews — jump to customer reviews">
+          <span class="trust-pill__stars" aria-hidden="true">★★★★★</span>
+          <p class="trust-pill__label">
+            <strong class="trust-pill__count">350+</strong>
+            <span class="trust-pill__desc">five-star reviews</span>
+          </p>
+          <span class="trust-pill__action" aria-hidden="true">See reviews</span>
+        </a>
 
         <h1 class="hero-title">
           <span class="hero-city">Omaha</span>
           <span class="hero-role">Mobile Mechanic</span>
         </h1>
-        <p class="lp-subhead">Car won't start? Check engine light? Brakes grinding? We come to you — same-day in greater Omaha</p>
+        <p class="lp-subhead">Any car. Any issue. We come to you — same-day across greater Omaha.</p>
 
-        <ul class="lp-proof">
-          <li>350+ five-star reviews</li>
-          <li>Lifetime warranty on our work</li>
+        <ul class="hero-badges" aria-label="Why call LetsWrench">
+          <li>Lifetime warranty</li>
           <li>Same-day repairs</li>
-          <li>24/7 emergency service</li>
+          <li>24/7 emergency</li>
         </ul>
 
-        <p class="lp-pricing-banner">Free quotes · upfront pricing · diagnostic fee waived with repair</p>
-
-        <a href="tel:+15319996507" class="lp-call" data-track="call">
-          <span class="lp-call__label">Tap to call — free quote</span>
-          <span class="lp-call__number">(531) 999-6507</span>
-        </a>
-        <a href="sms:+15319996507" class="lp-text" data-track="text">Text us instead</a>
-        <a href="#callback" class="lp-text" data-track="callback-jump">Can't talk? Request a callback ↓</a>
+        <div class="lp-cta-row">
+          <a href="tel:+15319996507" class="lp-call" data-track="call">
+            <span class="lp-call__label">Tap to call — free quote</span>
+            <span class="lp-call__number">(531) 999-6507</span>
+          </a>
+          <div class="hero-cta-secondary lp-cta-secondary">
+            <a href="sms:+15319996507" class="lp-text" data-track="text">Text us</a>
+            <span class="hero-cta-divider" aria-hidden="true">·</span>
+            <a href="#callback" class="lp-text" data-track="callback-jump">Request callback</a>
+          </div>
+        </div>
 
         <p class="lp-area-line">Serving <strong>Omaha</strong>, Bellevue, Papillion, La Vista, Council Bluffs &amp; nearby</p>
       </div>
@@ -66,32 +72,10 @@
       </figure>
     </section>
 
-    <section class="pricing-pride" id="pricing">
+    <section class="lp-services lp-services--after-hero" id="services">
       <div class="wrap">
-        <p class="pricing-pride__eyebrow">Honest pricing</p>
-        <h2 class="pricing-pride__title" id="pricing-city-title">We pride ourselves on fair, competitive pricing in Omaha</h2>
-        <p class="pricing-pride__text">Typically cheaper than shops by a mile — among the best value for mobile mechanic service in the greater Omaha area. Upfront quotes, no hidden fees, and no work until you approve the price. <strong>Lifetime warranty on all work we perform.</strong> Diagnostic fee waived with repair.</p>
-      </div>
-    </section>
-
-    <section class="reviews lp-reviews" id="reviews">
-      <div class="wrap">
-        <h2 class="reviews-heading">Trusted by 350+ customers</h2>
-        <p class="lp-reviews-intro">What customers across the Omaha metro are saying — swipe to read</p>
-
-        <div class="reviews-carousel" aria-label="Customer reviews">
-          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous review">‹</button>
-          <div class="reviews-track" id="reviews-track" tabindex="0"></div>
-          <button type="button" class="carousel-btn carousel-next" aria-label="Next review">›</button>
-        </div>
-        <p class="carousel-hint" id="review-counter" data-total-label="30+">1 of 30+</p>
-      </div>
-    </section>
-
-    <section class="lp-services" id="services">
-      <div class="wrap">
-        <h2 class="section-heading">Auto repair — at your location</h2>
-        <p class="section-intro">Most repairs done on-site — many jobs completed same-day. No tow truck. No waiting room.</p>
+        <h2 class="section-heading">We repair any car, any issue</h2>
+        <p class="section-intro">Cars, trucks, and SUVs — most makes and models. Brakes, batteries, diagnostics, A/C, engines, and more. If it can be fixed on-site, we do it. Same day. No tow truck. No waiting room.</p>
 
         <ul class="lp-service-grid">
           <li id="diagnostics">
@@ -114,9 +98,9 @@
             <strong>Maintenance</strong>
             <span>Oil changes, belts, tune-ups</span>
           </li>
-          <li id="free-quote">
-            <strong>Free quote</strong>
-            <span>Call or text — no obligation, upfront pricing</span>
+          <li id="any-issue">
+            <strong>Any car, any issue</strong>
+            <span>Call us — we'll tell you if we can fix it on-site</span>
           </li>
         </ul>
 
@@ -124,6 +108,28 @@
           <span class="lp-call__label">Get a quote for your vehicle</span>
           <span class="lp-call__number">(531) 999-6507</span>
         </a>
+      </div>
+    </section>
+
+    <section class="reviews lp-reviews" id="reviews">
+      <div class="wrap">
+        <h2 class="reviews-heading">Trusted by 350+ customers</h2>
+        <p class="lp-reviews-intro">What customers across the Omaha metro are saying — swipe to read</p>
+
+        <div class="reviews-carousel" aria-label="Customer reviews">
+          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous review">‹</button>
+          <div class="reviews-track" id="reviews-track" tabindex="0"></div>
+          <button type="button" class="carousel-btn carousel-next" aria-label="Next review">›</button>
+        </div>
+        <p class="carousel-hint" id="review-counter" data-total-label="30+">1 of 30+</p>
+      </div>
+    </section>
+
+    <section class="pricing-pride" id="pricing">
+      <div class="wrap">
+        <p class="pricing-pride__eyebrow">Honest pricing</p>
+        <h2 class="pricing-pride__title" id="pricing-city-title">Fair, competitive pricing in Omaha</h2>
+        <p class="pricing-pride__text">Upfront quotes, no hidden fees, and no work until you approve the price. <strong>Lifetime warranty on all work we perform.</strong> Diagnostic fee waived with repair.</p>
       </div>
     </section>
 
@@ -220,7 +226,7 @@
   <script src="js/gsc-verify.js?v=1"></script>
   <script src="js/avatars.js?v=3"></script>
   <script src="js/reviews.js?v=4"></script>
-  <script src="js/main.js?v=10"></script>
-  <script src="js/tracking.js?v=7"></script>
+  <script src="js/main.js?v=11"></script>
+  <script src="js/tracking.js?v=8"></script>
 </body>
 </html>
