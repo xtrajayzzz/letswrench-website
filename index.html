@@ -22,8 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=9">
-  <link rel="stylesheet" href="css/home.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="css/home.css?v=4">
   <!-- Google Search Console: set gscVerification in js/site-config.js -->
   <script type="application/ld+json">
   {
@@ -151,37 +151,37 @@
   <main id="main-content">
     <section class="hero">
       <div class="wrap hero-layout">
-        <div class="trust-pill trust-pill--reviews">
+        <a href="#reviews" class="trust-pill trust-pill--reviews trust-pill--link" data-track="reviews-jump" aria-label="350 plus five-star reviews — jump to customer reviews">
           <span class="trust-pill__stars" aria-hidden="true">★★★★★</span>
           <p class="trust-pill__label">
             <strong class="trust-pill__count">350+</strong>
             <span class="trust-pill__desc">five-star reviews</span>
           </p>
-        </div>
+          <span class="trust-pill__action" aria-hidden="true">See reviews</span>
+        </a>
 
         <h1 class="hero-title">
           <span class="hero-city">Omaha</span>
           <span class="hero-role">Mobile Mechanic</span>
         </h1>
-        <p class="hero-subhead">Car won't start? Check engine light? Brakes grinding? We come to you — same-day in greater Omaha</p>
+        <p class="hero-subhead">Any car. Any issue. We come to you — same-day across greater Omaha.</p>
 
-        <ul class="hero-proof">
-          <li>350+ five-star reviews</li>
-          <li>Lifetime warranty on our work</li>
+        <ul class="hero-badges" aria-label="Why call LetsWrench">
+          <li>Lifetime warranty</li>
           <li>Same-day repairs</li>
-          <li>24/7 emergency service</li>
-          <li>18+ years experience</li>
+          <li>24/7 emergency</li>
         </ul>
-
-        <p class="pricing-banner">Free quotes · upfront pricing · diagnostic fee waived with repair</p>
 
         <div class="hero-cta-row">
           <a href="tel:+15319996507" class="action-call action-call--primary" data-track="call">
             <span class="action-call__label">Tap to call — free quote</span>
             <span class="action-call__number">(531) 999-6507</span>
           </a>
-          <a href="sms:+15319996507" class="action-text action-text--link" data-track="text">Text us instead</a>
-          <a href="#callback" class="action-text action-text--link" data-track="callback-jump">Can't talk? Request a callback ↓</a>
+          <div class="hero-cta-secondary">
+            <a href="sms:+15319996507" class="action-text action-text--link" data-track="text">Text us</a>
+            <span class="hero-cta-divider" aria-hidden="true">·</span>
+            <a href="#callback" class="action-text action-text--link" data-track="callback-jump">Request callback</a>
+          </div>
         </div>
 
         <p class="hero-area-line">Serving <strong>Omaha</strong>, Bellevue, Papillion, La Vista, Council Bluffs &amp; nearby</p>
@@ -192,18 +192,10 @@
       </figure>
     </section>
 
-    <section class="pricing-pride" id="pricing">
-      <div class="wrap">
-        <p class="pricing-pride__eyebrow">Honest pricing</p>
-        <h2 class="pricing-pride__title">We pride ourselves on fair, competitive pricing in Omaha</h2>
-        <p class="pricing-pride__text">Among the best value for mobile mechanic service in the greater Omaha area — upfront quotes before we start, no hidden fees, and no work until you approve the price. <strong>Lifetime warranty on all work we perform.</strong> Diagnostic fee waived with repair.</p>
-      </div>
-    </section>
-
     <section class="services services--after-hero" id="services">
       <div class="wrap">
-        <h2 class="section-heading">Auto repair — at your location</h2>
-        <p class="section-intro">Most repairs done on-site — many jobs completed same-day. No tow truck. No waiting room.</p>
+        <h2 class="section-heading">We repair any car, any issue</h2>
+        <p class="section-intro">Cars, trucks, and SUVs — most makes and models. Brakes, batteries, diagnostics, A/C, engines, and more. If it can be fixed on-site, we do it. Same day. No tow truck. No waiting room.</p>
 
         <div class="service-categories">
           <article class="service-category">
@@ -252,6 +244,7 @@
           <article class="service-category">
             <h3 class="service-category-title">More Services</h3>
             <ul class="service-category-list">
+              <li><strong>Any issue, any car</strong><span>Call us — we'll tell you if we can fix it on-site</span></li>
               <li><strong>Pre-purchase inspection</strong><span>Before you buy used</span></li>
               <li><strong>Fleet service</strong><span>Vans, trucks &amp; company vehicles</span></li>
             </ul>
@@ -286,6 +279,14 @@
           <span class="action-call__label">Tap to call — free quote</span>
           <span class="action-call__number">(531) 999-6507</span>
         </a>
+      </div>
+    </section>
+
+    <section class="pricing-pride" id="pricing">
+      <div class="wrap">
+        <p class="pricing-pride__eyebrow">Honest pricing</p>
+        <h2 class="pricing-pride__title">Fair, competitive pricing in Omaha</h2>
+        <p class="pricing-pride__text">Upfront quotes before we start — no hidden fees, no work until you approve the price. <strong>Lifetime warranty on all work we perform.</strong> Diagnostic fee waived with repair.</p>
       </div>
     </section>
 
@@ -505,7 +506,7 @@
   <script src="js/avatars.js?v=3"></script>
   <script src="js/reviews.js?v=4"></script>
   <script src="js/main.js?v=10"></script>
-  <script src="js/tracking.js?v=7"></script>
+  <script src="js/tracking.js?v=8"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

@@ -106,6 +106,12 @@
         page: window.location.pathname
       });
     }
+
+    if (action === "reviews-jump") {
+      trackEvent("click_reviews_jump", {
+        page: window.location.pathname
+      });
+    }
   });
 
   initGtag();

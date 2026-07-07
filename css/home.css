@@ -86,16 +86,13 @@
     font-size: 1.125rem;
   }
 
-  body.site-home .hero-proof {
+  body.site-home .hero-badges {
     justify-content: flex-start;
-    gap: 0.5rem 1.25rem;
-    font-size: 0.875rem;
+    gap: 0.5rem 0.65rem;
   }
 
-  body.site-home .pricing-banner {
-    margin-left: 0;
-    margin-right: auto;
-    max-width: 24rem;
+  body.site-home .hero-badges li {
+    font-size: 0.8125rem;
   }
 
   body.site-home .hero-cta-row {
@@ -117,6 +114,11 @@
   body.site-home .hero-cta-row .action-text--link {
     margin: 0;
     align-self: center;
+  }
+
+  body.site-home .hero-cta-secondary {
+    justify-content: flex-start;
+    width: auto;
   }
 
   body.site-home .hero-area-line {

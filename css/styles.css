@@ -302,6 +302,48 @@ body {
   color: #fff;
 }
 
+.trust-pill--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.trust-pill--link:hover,
+.trust-pill--link:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.trust-pill--link:focus-visible {
+  outline: 2px solid var(--star);
+  outline-offset: 2px;
+}
+
+.trust-pill__action {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--star);
+  line-height: 1;
+}
+
+@media (min-width: 480px) {
+  .trust-pill--reviews.trust-pill--link .trust-pill__action {
+    display: inline;
+    margin-left: 0.15rem;
+  }
+
+  .trust-pill--reviews.trust-pill--link .trust-pill__action::before {
+    content: "· ";
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 400;
+  }
+}
+
 @media (min-width: 480px) {
   .trust-pill--reviews {
     flex-direction: row;
@@ -372,6 +414,80 @@ body {
 .hero-proof li::before {
   content: "✓ ";
   color: var(--proof-check);
+}
+
+.hero-badges {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.hero-badges li {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-cta-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  width: 100%;
+}
+
+.hero-cta-divider {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  body.site-home .hero-layout {
+    padding-bottom: 0.875rem;
+  }
+
+  body.site-home .hero-subhead {
+    font-size: 1rem;
+    max-width: 19rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.45;
+  }
+
+  body.site-home .hero-badges {
+    margin-bottom: 0.875rem;
+  }
+
+  body.site-home .hero-cta-row {
+    gap: 0.625rem;
+  }
+
+  body.site-home .hero-cta-secondary {
+    font-size: 0.875rem;
+  }
+
+  body.site-home .hero-area-line {
+    font-size: 0.75rem;
+    margin-top: 0.625rem;
+  }
+
+  body.site-home .hero-image img {
+    max-height: 12rem;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  body.site-home .services--after-hero {
+    padding-top: 1.5rem;
+  }
 }
 
 .pricing-banner {
@@ -877,6 +993,7 @@ body {
   background: var(--bg-card);
   padding: 2rem 0;
   border-top: none;
+  scroll-margin-top: 5rem;
 }
 
 .reviews-heading {
