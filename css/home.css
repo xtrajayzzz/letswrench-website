@@ -125,6 +125,10 @@
     text-align: left;
   }
 
+  body.site-main .hero-eyebrow {
+    text-align: left;
+  }
+
   /* Services: 3 columns */
   body.site-home .service-categories {
     grid-template-columns: repeat(3, 1fr);
@@ -190,4 +194,66 @@
   body.site-home .hero-role {
     font-size: 2.75rem;
   }
+}
+
+/* Main homepage only — subtle brand layer (ads LP unchanged) */
+body.site-main .hero {
+  background: linear-gradient(165deg, #0f1a2e 0%, var(--dark) 42%, #1a3048 100%);
+}
+
+body.site-main .hero-eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--star);
+}
+
+body.site-main .trust-strip {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+}
+
+body.site-main .trust-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem 1rem;
+  text-align: center;
+}
+
+body.site-main .trust-strip__item strong {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+body.site-main .trust-strip__item span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+body.site-main .service-category {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+body.site-main .reviews--brand {
+  background: #eef1f5;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 600px) {
+  body.site-main .trust-strip__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ads LP — logo + call header only */
+.lp-ads .lp-header .header-inner {
+  justify-content: space-between;
 }
