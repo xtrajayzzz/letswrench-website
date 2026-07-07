@@ -17,8 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
-  <link rel="stylesheet" href="css/home.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/home.css?v=6">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -114,24 +114,24 @@
           <span class="hero-city">Check Engine Light?</span>
           <span class="hero-role">We Come To You</span>
         </h1>
-        <p class="hero-subhead">Full computer diagnostics at your home, work, or roadside — anywhere in Omaha &amp; the greater metro</p>
+        <p class="hero-subhead">Full diagnostics at your home, work, or roadside — anywhere in Omaha &amp; the greater metro.</p>
 
-        <ul class="hero-proof">
+        <ul class="hero-badges" aria-label="Why call LetsWrench">
           <li>Same-day diagnostics</li>
-          <li>Fee waived with repair</li>
-          <li>Lifetime warranty on our work</li>
-          <li>18+ years experience</li>
+          <li>Fee waived w/ repair</li>
+          <li>Lifetime warranty</li>
         </ul>
-
-        <p class="pricing-banner">Know what's wrong before you spend a dollar on the fix</p>
 
         <div class="hero-cta-row">
           <a href="tel:+15319996507" class="action-call action-call--primary" data-track="call">
             <span class="action-call__label">Tap to call — same-day scan</span>
             <span class="action-call__number">(531) 999-6507</span>
           </a>
-          <a href="sms:+15319996507" class="action-text action-text--link" data-track="text">Text us instead</a>
-          <a href="#callback" class="action-text action-text--link" data-track="callback-jump">Can't talk? Request a callback ↓</a>
+          <div class="hero-cta-secondary">
+            <a href="sms:+15319996507" class="action-text action-text--link" data-track="text">Text us</a>
+            <span class="hero-cta-divider" aria-hidden="true">·</span>
+            <a href="#callback" class="action-text action-text--link" data-track="callback-jump">Request callback</a>
+          </div>
         </div>
 
         <p class="hero-area-line">Serving <strong>Omaha</strong>, Bellevue, Papillion, La Vista, Council Bluffs &amp; nearby</p>
@@ -142,18 +142,10 @@
       </figure>
     </section>
 
-    <section class="pricing-pride">
-      <div class="wrap">
-        <p class="pricing-pride__eyebrow">Steady vs. flashing</p>
-        <h2 class="pricing-pride__title">What your check engine light is telling you</h2>
-        <p class="pricing-pride__text"><strong>Steady light:</strong> something needs attention soon — drive gently and get it scanned before a small problem becomes an expensive one. <strong>Flashing light:</strong> pull over safely and stop driving. That usually means an active misfire that can wreck your catalytic converter in minutes. Either way, you don't need to tow it anywhere — we bring the scanner to you.</p>
-      </div>
-    </section>
-
     <section class="services services--after-hero" id="how">
       <div class="wrap">
         <h2 class="section-heading">How mobile diagnostics works</h2>
-        <p class="section-intro">No parts-store guess scan, no shop appointment days out. A mechanic with 18+ years of experience reads what your car is actually saying.</p>
+        <p class="section-intro">Any make or model — we bring the scanner to you. No parts-store guesswork, no shop appointment days out.</p>
 
         <div class="service-categories">
           <article class="service-category">
@@ -189,6 +181,14 @@
           <span class="action-call__label">Get your light checked today</span>
           <span class="action-call__number">(531) 999-6507</span>
         </a>
+      </div>
+    </section>
+
+    <section class="pricing-pride">
+      <div class="wrap">
+        <p class="pricing-pride__eyebrow">Steady vs. flashing</p>
+        <h2 class="pricing-pride__title">What your check engine light is telling you</h2>
+        <p class="pricing-pride__text"><strong>Steady light:</strong> something needs attention soon — drive gently and get it scanned before a small problem becomes an expensive one. <strong>Flashing light:</strong> pull over safely and stop driving. That usually means an active misfire that can wreck your catalytic converter in minutes. Either way, you don't need to tow it anywhere — we bring the scanner to you.</p>
       </div>
     </section>
 
@@ -267,7 +267,7 @@
           </label>
           <label class="lead-form-consent">
             <input type="checkbox" name="consent" required>
-            <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy">Privacy Policy</a>.</span>
+            <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy" class="text-link">Privacy Policy</a>.</span>
           </label>
           <button type="submit" class="lead-form-submit" data-track="form">Request a callback</button>
           <p class="lead-form-note">We'll only use this to call or text you back about your car. Message/data rates may apply.</p>
@@ -290,7 +290,12 @@
     <section class="area">
       <div class="wrap">
         <h2 class="section-heading">Mobile diagnostics across the greater Omaha metro</h2>
-        <p><a href="/">Omaha</a> · <a href="/mobile-mechanic-bellevue">Bellevue</a> · <a href="/mobile-mechanic-papillion">Papillion</a> · La Vista · Council Bluffs</p>
+        <ul class="area-links" aria-label="City pages">
+          <li><a class="area-link" href="/">Omaha</a></li>
+          <li><a class="area-link" href="/mobile-mechanic-bellevue">Bellevue</a></li>
+          <li><a class="area-link" href="/mobile-mechanic-papillion">Papillion</a></li>
+        </ul>
+        <p class="area-more">La Vista · Council Bluffs &amp; nearby</p>
       </div>
     </section>
   </main>
@@ -329,7 +334,7 @@
 
   <script src="js/site-config.js?v=6"></script>
   <script src="js/gsc-verify.js?v=1"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=13"></script>
   <script src="js/tracking.js?v=7"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();

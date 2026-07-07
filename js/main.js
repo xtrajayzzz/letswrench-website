@@ -312,7 +312,8 @@
       );
     }
 
-    var areaLine = document.querySelector(".lp-area-line");
+    var areaLine =
+      document.querySelector(".hero-area-line") || document.querySelector(".lp-area-line");
     if (areaLine) {
       areaLine.innerHTML = isRegion
         ? "Serving the <strong>greater Omaha area</strong> — " + nearbyCitiesLabel(cityName) + " &amp; nearby"
@@ -329,7 +330,9 @@
         "Fair, competitive pricing in " + inPlace;
     }
 
-    var finalTitle = document.querySelector(".lp-final__title");
+    var finalTitle =
+      document.querySelector(".cta-section__title") ||
+      document.querySelector(".lp-final__title");
     if (finalTitle) {
       finalTitle.textContent = "Need a mobile mechanic in " + inPlace + "?";
     }
@@ -350,10 +353,13 @@
     document.title =
       (cityName ? cityName + " " : "") + service.titleName + " | LetsWrench Mobile Mechanic";
 
-    var subhead = document.querySelector(".lp-subhead");
+    var subhead =
+      document.querySelector(".hero-subhead") || document.querySelector(".lp-subhead");
     if (subhead) subhead.textContent = service.subhead;
 
-    var callLabel = document.querySelector(".lp-hero .lp-call__label");
+    var callLabel =
+      document.querySelector(".hero .action-call__label") ||
+      document.querySelector(".lp-hero .lp-call__label");
     if (callLabel) callLabel.textContent = service.callLabel;
   }
 

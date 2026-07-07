@@ -17,8 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=8">
-  <link rel="stylesheet" href="css/home.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/home.css?v=6">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -98,24 +98,24 @@
           <span class="hero-city">Papillion</span>
           <span class="hero-role">Mobile Mechanic</span>
         </h1>
-        <p class="hero-subhead">Same-day repairs anywhere in Papillion — your driveway, your office, or roadside</p>
+        <p class="hero-subhead">Any car. Any issue. Same-day repairs in Papillion — we come to you.</p>
 
-        <ul class="hero-proof">
-          <li>Lifetime warranty on our work</li>
+        <ul class="hero-badges" aria-label="Why call LetsWrench">
+          <li>Lifetime warranty</li>
           <li>Same-day repairs</li>
-          <li>24/7 emergency service</li>
-          <li>18+ years experience</li>
+          <li>24/7 emergency</li>
         </ul>
-
-        <p class="pricing-banner">Upfront quotes · no tow fees · diagnostic fee waived with repair</p>
 
         <div class="hero-cta-row">
           <a href="tel:+15319996507" class="action-call action-call--primary" data-track="call">
             <span class="action-call__label">Tap to call — free quote</span>
             <span class="action-call__number">(531) 999-6507</span>
           </a>
-          <a href="sms:+15319996507" class="action-text action-text--link" data-track="text">Text us instead</a>
-          <a href="#callback" class="action-text action-text--link" data-track="callback-jump">Can't talk? Request a callback ↓</a>
+          <div class="hero-cta-secondary">
+            <a href="sms:+15319996507" class="action-text action-text--link" data-track="text">Text us</a>
+            <span class="hero-cta-divider" aria-hidden="true">·</span>
+            <a href="#callback" class="action-text action-text--link" data-track="callback-jump">Request callback</a>
+          </div>
         </div>
 
         <p class="hero-area-line">Serving <strong>all of Papillion</strong> — Shadow Lake, Tara Hills, Walnut Creek, Eagle Run &amp; more</p>
@@ -126,18 +126,10 @@
       </figure>
     </section>
 
-    <section class="pricing-pride">
-      <div class="wrap">
-        <p class="pricing-pride__eyebrow">Why Papillion calls us</p>
-        <h2 class="pricing-pride__title">Skip the shop — we bring the repair to you in Papillion</h2>
-        <p class="pricing-pride__text">No tow truck. No waiting room. We pull up to your home or workplace, diagnose on the spot, quote you upfront, and fix it right there — backed by our <strong>lifetime warranty on the work we perform</strong>. Most jobs are done the same day we get the call.</p>
-      </div>
-    </section>
-
     <section class="services services--after-hero" id="services">
       <div class="wrap">
-        <h2 class="section-heading">Mobile auto repair in Papillion</h2>
-        <p class="section-intro">From a no-start in Shadow Lake to a brake job near Schram Road — we handle it where the car sits.</p>
+        <h2 class="section-heading">We repair any car, any issue in Papillion</h2>
+        <p class="section-intro">Cars, trucks, and SUVs — most makes and models. From a no-start in Shadow Lake to a brake job near Schram Road — we handle it where the car sits.</p>
 
         <div class="service-categories">
           <article class="service-category">
@@ -177,6 +169,14 @@
           <span class="action-call__label">Get a quote for your vehicle</span>
           <span class="action-call__number">(531) 999-6507</span>
         </a>
+      </div>
+    </section>
+
+    <section class="pricing-pride">
+      <div class="wrap">
+        <p class="pricing-pride__eyebrow">Why Papillion calls us</p>
+        <h2 class="pricing-pride__title">Skip the shop — we bring the repair to you in Papillion</h2>
+        <p class="pricing-pride__text">No tow truck. No waiting room. We pull up to your home or workplace, diagnose on the spot, quote you upfront, and fix it right there — backed by our <strong>lifetime warranty on the work we perform</strong>. Most jobs are done the same day we get the call.</p>
       </div>
     </section>
 
@@ -239,7 +239,7 @@
           </label>
           <label class="lead-form-consent">
             <input type="checkbox" name="consent" required>
-            <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy">Privacy Policy</a>.</span>
+            <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy" class="text-link">Privacy Policy</a>.</span>
           </label>
           <button type="submit" class="lead-form-submit" data-track="form">Request a callback</button>
           <p class="lead-form-note">We'll only use this to call or text you back about your car. Message/data rates may apply.</p>
@@ -262,8 +262,12 @@
     <section class="area">
       <div class="wrap">
         <h2 class="section-heading">Also serving nearby</h2>
-        <p><a href="/">Omaha</a> · <a href="/mobile-mechanic-bellevue">Bellevue</a> · La Vista · Gretna · Council Bluffs</p>
-        <p>Check engine light on? See our <a href="/check-engine-light-omaha">mobile diagnostics in Omaha</a>.</p>
+        <ul class="area-links" aria-label="Nearby city pages">
+          <li><a class="area-link" href="/">Omaha</a></li>
+          <li><a class="area-link" href="/mobile-mechanic-bellevue">Bellevue</a></li>
+          <li><a class="area-link" href="/check-engine-light-omaha">Check Engine Light</a></li>
+        </ul>
+        <p class="area-more">La Vista · Gretna · Council Bluffs</p>
       </div>
     </section>
   </main>
@@ -302,7 +306,7 @@
 
   <script src="js/site-config.js?v=6"></script>
   <script src="js/gsc-verify.js?v=1"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=13"></script>
   <script src="js/tracking.js?v=7"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();

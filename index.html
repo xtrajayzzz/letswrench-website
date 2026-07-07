@@ -22,8 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=11">
-  <link rel="stylesheet" href="css/home.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/home.css?v=6">
   <!-- Google Search Console: set gscVerification in js/site-config.js -->
   <script type="application/ld+json">
   {
@@ -376,8 +376,14 @@
     <section class="area" id="area">
       <div class="wrap">
         <h2 class="section-heading">Service Area</h2>
-        <p>Based in the <strong>greater Omaha, NE</strong> service area — mobile repairs at your location in <a href="/mobile-mechanic-bellevue">Bellevue</a>, <a href="/mobile-mechanic-papillion">Papillion</a>, La Vista, Elkhorn, Council Bluffs, and nearby.</p>
-        <p>Check engine light on? See our <a href="/check-engine-light-omaha">mobile diagnostics in Omaha</a>.</p>
+        <p class="area-intro">Based in the <strong>greater Omaha, NE</strong> service area — mobile repairs at your home, work, or roadside.</p>
+        <ul class="area-links" aria-label="City pages">
+          <li><a class="area-link" href="/">Omaha</a></li>
+          <li><a class="area-link" href="/mobile-mechanic-bellevue">Bellevue</a></li>
+          <li><a class="area-link" href="/mobile-mechanic-papillion">Papillion</a></li>
+          <li><a class="area-link" href="/check-engine-light-omaha">Check Engine Light</a></li>
+        </ul>
+        <p class="area-more">Also La Vista, Elkhorn, Council Bluffs &amp; nearby.</p>
       </div>
     </section>
 
@@ -439,7 +445,7 @@
           </label>
           <label class="lead-form-consent">
             <input type="checkbox" name="consent" required>
-            <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy">Privacy Policy</a>.</span>
+            <span>I agree to be contacted by call or text about my request and accept the <a href="/privacy-policy" class="text-link">Privacy Policy</a>.</span>
           </label>
           <button type="submit" class="lead-form-submit" data-track="form">Request a callback</button>
           <p class="lead-form-note" id="lead-form-note">We'll only use this to call or text you back about your car. Message/data rates may apply.</p>
@@ -505,7 +511,7 @@
   <script src="js/gsc-verify.js?v=1"></script>
   <script src="js/avatars.js?v=3"></script>
   <script src="js/reviews.js?v=4"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=13"></script>
   <script src="js/tracking.js?v=8"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
