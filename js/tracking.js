@@ -66,6 +66,27 @@
     gtag("event", name, params || {});
   }
 
+  function initPhoneLinks() {
+    var phoneTel = config.phoneTel || "+15319996507";
+    var phoneDisplay = config.phoneDisplay || "(531) 999-6507";
+
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      link.setAttribute("href", "tel:" + phoneTel.replace(/^tel:/i, ""));
+      if (!link.getAttribute("data-track")) {
+        link.setAttribute("data-track", "call");
+      }
+      if (!link.getAttribute("aria-label") && link.classList.contains("sticky-call")) {
+        link.setAttribute("aria-label", "Call " + phoneDisplay);
+      }
+    });
+
+    document.querySelectorAll(".action-call__number, .sticky-number").forEach(function (el) {
+      if (el.textContent.indexOf("531") !== -1 || el.textContent.indexOf("999") !== -1) {
+        el.textContent = phoneDisplay;
+      }
+    });
+  }
+
   function trackAdsLeadConversion() {
     if (!ADS_ID) return;
 
@@ -80,42 +101,50 @@
     });
   }
 
-  document.addEventListener("click", function (e) {
-    var link = e.target.closest("[data-track]");
-    if (!link) return;
+  document.addEventListener(
+    "click",
+    function (e) {
+      var link = e.target.closest("[data-track]");
+      if (!link) return;
 
-    var action = link.getAttribute("data-track");
-    var href = link.getAttribute("href") || "";
+      var action = link.getAttribute("data-track");
+      var href = link.getAttribute("href") || "";
 
-    if (action === "call") {
-      trackEvent("click_call", {
-        page: window.location.pathname,
-        link_url: href
-      });
-    }
+      if (action === "call") {
+        trackEvent("click_call", {
+          page: window.location.pathname,
+          link_url: href
+        });
+        // Never block native tel: dialer — analytics only
+        if (href.indexOf("tel:") === 0) return;
+      }
 
-    if (action === "text") {
-      trackEvent("click_text", {
-        page: window.location.pathname,
-        link_url: href
-      });
-    }
+      if (action === "text") {
+        trackEvent("click_text", {
+          page: window.location.pathname,
+          link_url: href
+        });
+        if (href.indexOf("sms:") === 0) return;
+      }
 
-    if (action === "form") {
-      trackEvent("form_submit", {
-        page: window.location.pathname
-      });
-    }
+      if (action === "form") {
+        trackEvent("form_submit", {
+          page: window.location.pathname
+        });
+      }
 
-    if (action === "reviews-jump") {
-      trackEvent("click_reviews_jump", {
-        page: window.location.pathname
-      });
-    }
-  });
+      if (action === "reviews-jump") {
+        trackEvent("click_reviews_jump", {
+          page: window.location.pathname
+        });
+      }
+    },
+    true
+  );
 
   initGtag();
   initClarity();
+  initPhoneLinks();
 
   if (/^\/thanks\/?$/i.test(window.location.pathname)) {
     trackAdsLeadConversion();

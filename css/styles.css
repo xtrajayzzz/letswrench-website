@@ -195,10 +195,11 @@ body {
   background: var(--accent);
   color: #fff;
   padding: 0.5rem 1rem;
-  min-height: 2.5rem;
+  min-height: var(--tap-min);
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  touch-action: manipulation;
 }
 
 .btn-header:hover {
@@ -681,13 +682,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
+  min-height: var(--tap-min);
   padding: 0.5rem 0.75rem;
   background: var(--accent);
   color: #fff;
   text-decoration: none;
   border-radius: var(--radius);
+  cursor: pointer;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+}
+
+.action-call span {
+  pointer-events: none;
 }
 
 .action-call:active {
@@ -1647,6 +1654,13 @@ body {
   border-radius: var(--radius);
   font-weight: 800;
   font-size: 1rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sticky-call span {
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
