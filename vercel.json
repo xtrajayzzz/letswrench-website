@@ -12,6 +12,14 @@
     {
       "source": "/mobile-mechanic/:service",
       "destination": "/mobile-mechanic"
+    },
+    {
+      "source": "/ads-mesa/:city/:service",
+      "destination": "/ads-mesa"
+    },
+    {
+      "source": "/ads-mesa/:service",
+      "destination": "/ads-mesa"
     }
   ],
   "redirects": [
@@ -24,21 +32,6 @@
       "source": "/ads",
       "destination": "/mobile-mechanic",
       "permanent": true
-    },
-    {
-      "source": "/mobile-mechanic-gilbert",
-      "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/mobile-mechanic-chandler",
-      "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/check-engine-light-mesa",
-      "destination": "/",
-      "permanent": false
     },
     {
       "source": "/_archive/:path*",

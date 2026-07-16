@@ -257,3 +257,141 @@ body.site-main .reviews--brand {
 .lp-ads .lp-header .header-inner {
   justify-content: space-between;
 }
+
+/* Hub — multi-market homepage */
+.hero-brand {
+  display: block;
+  font-size: clamp(2.25rem, 8vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fff;
+}
+
+body.site-hub .hero-role {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.markets {
+  background: var(--bg-card);
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.market-cards {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.market-card {
+  padding: 1.5rem 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.market-card__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.market-card__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.market-card__text {
+  margin: 0 auto 1.25rem;
+  max-width: 18rem;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.market-card .action-call--primary {
+  margin-bottom: 0.85rem;
+}
+
+.market-card__link {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+  min-height: var(--tap-min);
+  line-height: var(--tap-min);
+}
+
+.market-card__link:hover {
+  color: var(--accent);
+}
+
+.hub-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.hub-cta-row .btn-header {
+  min-width: 10rem;
+}
+
+@media (min-width: 700px) {
+  .market-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  body.site-hub .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  body.site-hub .hero > .wrap.hero-layout {
+    max-width: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  body.site-hub .hero > .hero-image.wrap {
+    max-width: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  body.site-hub .hero-badges {
+    justify-content: flex-start;
+  }
+
+  body.site-hub .hero-area-line {
+    text-align: left;
+  }
+
+  body.site-hub .markets {
+    padding: 3rem 0;
+  }
+}

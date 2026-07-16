@@ -66,11 +66,32 @@
     gtag("event", name, params || {});
   }
 
+  function resolveMarketPhone() {
+    var marketKey = document.body.getAttribute("data-market") || "";
+    var markets = config.markets || {};
+    var market = markets[marketKey];
+    if (market && market.phoneTel) {
+      return {
+        phoneTel: market.phoneTel,
+        phoneDisplay: market.phoneDisplay || market.phoneTel
+      };
+    }
+    return {
+      phoneTel: config.phoneTel || "+15319996507",
+      phoneDisplay: config.phoneDisplay || "(531) 999-6507"
+    };
+  }
+
   function initPhoneLinks() {
-    var phoneTel = config.phoneTel || "+15319996507";
-    var phoneDisplay = config.phoneDisplay || "(531) 999-6507";
+    // Hub page keeps both market numbers — do not overwrite
+    if (document.body.classList.contains("site-hub")) return;
+
+    var phone = resolveMarketPhone();
+    var phoneTel = phone.phoneTel;
+    var phoneDisplay = phone.phoneDisplay;
 
     document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      if (link.getAttribute("data-phone-lock") === "true") return;
       link.setAttribute("href", "tel:" + phoneTel.replace(/^tel:/i, ""));
       if (!link.getAttribute("data-track")) {
         link.setAttribute("data-track", "call");
@@ -80,10 +101,14 @@
       }
     });
 
+    document.querySelectorAll('a[href^="sms:"]').forEach(function (link) {
+      if (link.getAttribute("data-phone-lock") === "true") return;
+      link.setAttribute("href", "sms:" + phoneTel.replace(/^tel:/i, ""));
+    });
+
     document.querySelectorAll(".action-call__number, .sticky-number").forEach(function (el) {
-      if (el.textContent.indexOf("531") !== -1 || el.textContent.indexOf("999") !== -1) {
-        el.textContent = phoneDisplay;
-      }
+      if (el.getAttribute("data-phone-lock") === "true") return;
+      el.textContent = phoneDisplay;
     });
   }
 

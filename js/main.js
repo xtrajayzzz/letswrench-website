@@ -211,22 +211,41 @@
     omaha: "Omaha",
     bellevue: "Bellevue",
     papillion: "Papillion",
+    mesa: "Mesa",
+    gilbert: "Gilbert",
+    chandler: "Chandler",
+    tempe: "Tempe",
     "la-vista": "La Vista",
     elkhorn: "Elkhorn",
     gretna: "Gretna",
     "council-bluffs": "Council Bluffs",
-    "greater-omaha": "Greater Omaha"
+    "greater-omaha": "Greater Omaha",
+    "queen-creek": "Queen Creek",
+    "apache-junction": "Apache Junction"
   };
 
-  var ADS_NEARBY_CITIES = [
-    "Omaha",
-    "Bellevue",
-    "Papillion",
-    "La Vista",
-    "Elkhorn",
-    "Gretna",
-    "Council Bluffs"
-  ];
+  var ADS_NEARBY_BY_MARKET = {
+    omaha: [
+      "Omaha",
+      "Bellevue",
+      "Papillion",
+      "La Vista",
+      "Elkhorn",
+      "Gretna",
+      "Council Bluffs"
+    ],
+    mesa: [
+      "Mesa",
+      "Gilbert",
+      "Chandler",
+      "Tempe",
+      "Queen Creek",
+      "Apache Junction",
+      "San Tan Valley"
+    ]
+  };
+
+  var ADS_NEARBY_CITIES = ADS_NEARBY_BY_MARKET.omaha;
 
   var ADS_SERVICES = {
     diagnostics: {
@@ -285,16 +304,25 @@
   }
 
   function nearbyCitiesLabel(cityName) {
-    return ADS_NEARBY_CITIES.filter(function (name) {
-      return name !== cityName;
-    }).join(", ");
+    var market = document.body.getAttribute("data-market") || "omaha";
+    var list = ADS_NEARBY_BY_MARKET[market] || ADS_NEARBY_CITIES;
+    return list
+      .filter(function (name) {
+        return name !== cityName;
+      })
+      .join(", ");
   }
 
   function applyAdsCity(cityName, citySlug) {
     document.body.setAttribute("data-ads-city", citySlug || cityName.toLowerCase());
 
-    var isRegion = cityName === "Greater Omaha";
-    var inPlace = isRegion ? "the greater Omaha area" : cityName;
+    var isRegion = cityName === "Greater Omaha" || cityName === "East Valley";
+    var inPlace =
+      cityName === "Greater Omaha"
+        ? "the greater Omaha area"
+        : cityName === "East Valley"
+          ? "the East Valley"
+          : cityName;
 
     var heroCity = document.querySelector(".hero-city");
     if (heroCity) heroCity.textContent = cityName;
@@ -366,7 +394,9 @@
   function initAdsLandingPersonalization() {
     if (!document.body.classList.contains("lp-ads")) return;
 
-    var pathMatch = window.location.pathname.match(/\/mobile-mechanic(?:\/([^/]+))?(?:\/([^/]+))?\/?$/);
+    var pathMatch = window.location.pathname.match(
+      /\/(?:mobile-mechanic|ads-mesa)(?:\/([^/]+))?(?:\/([^/]+))?\/?$/
+    );
     var seg1 = pathMatch && pathMatch[1] ? pathMatch[1] : null;
     var seg2 = pathMatch && pathMatch[2] ? pathMatch[2] : null;
     var citySlug = null;

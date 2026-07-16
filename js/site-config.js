@@ -1,8 +1,20 @@
 // Edit this file with your Google IDs, then deploy.
 window.LETS_WRENCH_CONFIG = {
-  // Business phone — used sitewide for tel: links
+  // Default phone (hub / legal pages) — Omaha
   phoneTel: "+15319996507",
   phoneDisplay: "(531) 999-6507",
+  markets: {
+    omaha: {
+      phoneTel: "+15319996507",
+      phoneDisplay: "(531) 999-6507",
+      label: "Omaha, NE"
+    },
+    mesa: {
+      phoneTel: "+16236630873",
+      phoneDisplay: "(623) 663-0873",
+      label: "Mesa, AZ"
+    }
+  },
   // GA4: analytics.google.com → Admin → Data streams → Measurement ID
   ga4Id: "G-QL81J7VPLN",
   // Google Ads: Tools → Conversions → your website lead action → Tag setup

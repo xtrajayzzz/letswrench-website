@@ -1,25 +1,26 @@
 # LetsWrench — Mobile Mechanic Website
 
-Two pages for **LetsWrench** in Omaha, NE — built mobile-first with tap-to-call, reviews, and 24/7 messaging.
+Multi-market site for **LetsWrench** — Omaha, NE and Mesa, AZ.
 
-**Phone:** (531) 999-6507 · **Hours:** 24/7 · **Market:** Omaha & greater metro
+| Market | Phone | SEO hub | Ads LP |
+|--------|-------|---------|--------|
+| **Omaha** | (531) 999-6507 | `/omaha` | `/mobile-mechanic` (`noindex`) |
+| **Mesa** | (623) 663-0873 | `/mesa` | `/ads-mesa` (`noindex`) |
 
-## Which page to use
+**Hub:** `https://lets-wrench.com/` — choose your city
+
+## Key URLs
 
 | File | URL | Use for |
 |------|-----|---------|
-| **`index.html`** | `https://lets-wrench.com` | Main site — call-first layout, logo + Call header |
-| **`mobile-mechanic.html`** | `https://lets-wrench.com/mobile-mechanic` | Google Ads — enhanced layout with trust strip & nav (`noindex`) |
+| `index.html` | `/` | Multi-market hub |
+| `omaha.html` | `/omaha` | Omaha SEO homepage |
+| `mesa.html` | `/mesa` | Mesa SEO homepage |
+| `mobile-mechanic.html` | `/mobile-mechanic` | Omaha Google Ads |
+| `ads-mesa.html` | `/ads-mesa` | Mesa Google Ads |
+| Suburb pages | `/mobile-mechanic-bellevue`, etc. | Local SEO |
 
-Point your Google Ads final URL to: `https://lets-wrench.com/mobile-mechanic`
-
-These two pages are **intentionally different**. Edit each file separately.
-
-Old `/ads.html` links redirect to `/mobile-mechanic` automatically.
-
-## Archived Mesa pages
-
-Former Arizona city pages live in `_archive/mesa/` for reference only. Old URLs (`/mobile-mechanic-gilbert`, `/mobile-mechanic-chandler`, `/check-engine-light-mesa`) redirect to the homepage via `vercel.json`.
+Phones live in `js/site-config.js` under `markets.omaha` / `markets.mesa`.
 
 ## Preview locally
 
@@ -27,20 +28,8 @@ Former Arizona city pages live in `_archive/mesa/` for reference only. Old URLs 
 npx serve . -p 3000
 ```
 
-- Main: http://localhost:3000  
-- Landing: http://localhost:3000/mobile-mechanic  
+## Google Ads
 
-## Google Ads A/B testing
-
-1. Run ads to `/mobile-mechanic` (version A).
-2. Later, duplicate to e.g. `bellevue.html` with one change (headline, hero, etc.).
-3. Split ad groups or use UTM tags to compare call volume.
-4. In `js/tracking.js`, replace `G-XXXXXXXXXX` with your GA4 ID to track call/text clicks.
-
-## Files
-
-- `index.html` — full site (Omaha)
-- `mobile-mechanic.html` — Google Ads landing page (Omaha)
-- `css/styles.css` + `css/ads.css` — styling
-- `js/reviews.js` + `js/avatars.js` + `js/main.js` — reviews carousel
-- `js/tracking.js` — GA4 call/text click events
+- Omaha campaign final URL: `https://lets-wrench.com/mobile-mechanic`
+- Mesa campaign final URL: `https://lets-wrench.com/ads-mesa`
+- Separate location targeting + call extensions per market
