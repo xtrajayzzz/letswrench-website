@@ -10,8 +10,8 @@ window.LETS_WRENCH_CONFIG = {
       label: "Omaha, NE"
     },
     mesa: {
-      phoneTel: "+16236630873",
-      phoneDisplay: "(623) 663-0873",
+      phoneTel: "+14807451761",
+      phoneDisplay: "(480) 745-1761",
       label: "Mesa, AZ"
     }
   },

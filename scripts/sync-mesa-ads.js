@@ -12,8 +12,8 @@ let html = fs.readFileSync(path.join(root, "mobile-mechanic.html"), "utf8");
 
 html = transform(html, [
   // Phones first (before city word swaps)
-  [/\+15319996507/g, "+16236630873"],
-  [/\(531\) 999-6507/g, "(623) 663-0873"],
+  [/\+15319996507/g, "+14807451761"],
+  [/\(531\) 999-6507/g, "(480) 745-1761"],
 
   // URLs / paths before broad city replaces
   [/https:\/\/lets-wrench\.com\/mobile-mechanic/g, "https://lets-wrench.com/mesa-mobile-mechanic"],
