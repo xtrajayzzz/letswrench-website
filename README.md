@@ -18,6 +18,7 @@ Multi-market site for **LetsWrench** — Omaha, NE and Mesa, AZ.
 | `mesa.html` | `/mesa` | Mesa SEO homepage |
 | `mobile-mechanic.html` | `/mobile-mechanic` | Omaha Google Ads |
 | `mesa-mobile-mechanic.html` | `/mesa-mobile-mechanic` | Mesa Google Ads |
+| `free-quote-mesa.html` | `/free-quote-mesa` | Mesa Ads sitelink (`noindex`) |
 | Suburb pages | `/mobile-mechanic-bellevue`, etc. | Local SEO |
 
 Phones live in `js/site-config.js` under `markets.omaha` / `markets.mesa`.
@@ -32,4 +33,5 @@ npx serve . -p 3000
 
 - Omaha campaign final URL: `https://lets-wrench.com/mobile-mechanic`
 - Mesa campaign final URL: `https://lets-wrench.com/mesa-mobile-mechanic`
+- Mesa sitelink (Free Quote): `https://lets-wrench.com/free-quote-mesa`
 - Separate location targeting + call extensions per market
