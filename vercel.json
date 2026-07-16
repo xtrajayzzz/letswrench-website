@@ -14,12 +14,12 @@
       "destination": "/mobile-mechanic"
     },
     {
-      "source": "/ads-mesa/:city/:service",
-      "destination": "/ads-mesa"
+      "source": "/mesa-mobile-mechanic/:city/:service",
+      "destination": "/mesa-mobile-mechanic"
     },
     {
-      "source": "/ads-mesa/:service",
-      "destination": "/ads-mesa"
+      "source": "/mesa-mobile-mechanic/:service",
+      "destination": "/mesa-mobile-mechanic"
     }
   ],
   "redirects": [
@@ -31,6 +31,16 @@
     {
       "source": "/ads",
       "destination": "/mobile-mechanic",
+      "permanent": true
+    },
+    {
+      "source": "/ads-mesa",
+      "destination": "/mesa-mobile-mechanic",
+      "permanent": true
+    },
+    {
+      "source": "/ads-mesa/:path*",
+      "destination": "/mesa-mobile-mechanic",
       "permanent": true
     },
     {

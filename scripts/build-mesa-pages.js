@@ -124,7 +124,7 @@ let ads = read("mobile-mechanic.html");
 ads = transform(ads, [
   [/Omaha/g, "Mesa"],
   [/omaha/g, "mesa"],
-  [/https:\/\/lets-wrench\.com\/mobile-mechanic/g, "https://lets-wrench.com/ads-mesa"],
+  [/https:\/\/lets-wrench\.com\/mobile-mechanic/g, "https://lets-wrench.com/mesa-mobile-mechanic"],
   [/\+15319996507/g, "+16236630873"],
   [/\(531\) 999-6507/g, "(623) 663-0873"],
   [/Nebraska/g, "Arizona"],
@@ -141,11 +141,12 @@ ads = transform(ads, [
   [/home\.css\?v=9/g, "home.css?v=10"],
   [/site-config\.js\?v=7/g, "site-config.js?v=8"],
   [/tracking\.js\?v=9/g, "tracking.js?v=10"],
-  [/main\.js\?v=13/g, "main.js?v=14"],
+  [/main\.js\?v=13/g, "main.js?v=15"],
+  [/reviews\.js\?v=4/g, "reviews.js?v=5"],
   [/data-ads-city="mesa"/g, 'data-ads-city="mesa"'],
   [/data-market="omaha"/g, 'data-market="mesa"'],
   [/<body class="site-home site-main lp-ads" data-ads-city="mesa">/, '<body class="site-home site-main lp-ads" data-market="mesa" data-ads-city="mesa">'],
-  [/New lead — lets-wrench\.com \(mobile-mechanic\)/g, "New lead — lets-wrench.com (ads-mesa)"],
+  [/New lead — lets-wrench\.com \(mobile-mechanic\)/g, "New lead — lets-wrench.com (mesa-mobile-mechanic)"],
   [/41\.2565/g, "33.4152"],
   [/-95\.9345/g, "-111.8315"],
 ]);
@@ -156,5 +157,5 @@ if (!ads.includes('data-market="mesa"')) {
     '<body class="site-home site-main lp-ads" data-market="mesa"'
   );
 }
-write("ads-mesa.html", ads);
-console.log("Wrote ads-mesa");
+write("mesa-mobile-mechanic.html", ads);
+console.log("Wrote mesa-mobile-mechanic");

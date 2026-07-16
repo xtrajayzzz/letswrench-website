@@ -79,7 +79,12 @@
   }
 
   function initReviews() {
-    var reviews = window.LETS_WRENCH_REVIEWS;
+    var market =
+      (document.body && document.body.getAttribute("data-market")) || "omaha";
+    var reviews =
+      market === "mesa" && window.LETS_WRENCH_REVIEWS_MESA
+        ? window.LETS_WRENCH_REVIEWS_MESA
+        : window.LETS_WRENCH_REVIEWS;
     if (!reviews || !reviews.length) return;
 
     reviews = shuffleReviews(
@@ -395,7 +400,7 @@
     if (!document.body.classList.contains("lp-ads")) return;
 
     var pathMatch = window.location.pathname.match(
-      /\/(?:mobile-mechanic|ads-mesa)(?:\/([^/]+))?(?:\/([^/]+))?\/?$/
+      /\/(?:mobile-mechanic|mesa-mobile-mechanic)(?:\/([^/]+))?(?:\/([^/]+))?\/?$/
     );
     var seg1 = pathMatch && pathMatch[1] ? pathMatch[1] : null;
     var seg2 = pathMatch && pathMatch[2] ? pathMatch[2] : null;
