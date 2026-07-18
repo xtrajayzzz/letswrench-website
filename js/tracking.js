@@ -82,9 +82,19 @@
     };
   }
 
+  function rememberMarket() {
+    var marketKey = document.body.getAttribute("data-market") || "";
+    if (!marketKey) return;
+    try {
+      sessionStorage.setItem("letswrench_market", marketKey);
+    } catch (e) {}
+  }
+
   function initPhoneLinks() {
     // Hub page keeps both market numbers — do not overwrite
     if (document.body.classList.contains("site-hub")) return;
+
+    rememberMarket();
 
     var phone = resolveMarketPhone();
     var phoneTel = phone.phoneTel;
@@ -96,8 +106,16 @@
       if (!link.getAttribute("data-track")) {
         link.setAttribute("data-track", "call");
       }
-      if (!link.getAttribute("aria-label") && link.classList.contains("sticky-call")) {
-        link.setAttribute("aria-label", "Call " + phoneDisplay);
+      if (link.classList.contains("sticky-call") || link.getAttribute("aria-label")) {
+        var label = link.getAttribute("aria-label") || "";
+        if (!label || /call/i.test(label) || /^tap to call/i.test(label)) {
+          link.setAttribute(
+            "aria-label",
+            link.classList.contains("sticky-call")
+              ? "Call " + phoneDisplay
+              : "Tap to call " + phoneDisplay
+          );
+        }
       }
     });
 
@@ -106,7 +124,17 @@
       link.setAttribute("href", "sms:" + phoneTel.replace(/^tel:/i, ""));
     });
 
-    document.querySelectorAll(".action-call__number, .sticky-number").forEach(function (el) {
+    document.querySelectorAll(".action-call__number").forEach(function (el) {
+      if (el.getAttribute("data-phone-lock") === "true") return;
+      el.textContent = phoneDisplay;
+    });
+
+    document.querySelectorAll(".sticky-number").forEach(function (el) {
+      if (el.getAttribute("data-phone-lock") === "true") return;
+      el.textContent = "Call " + phoneDisplay;
+    });
+
+    document.querySelectorAll(".footer-phone").forEach(function (el) {
       if (el.getAttribute("data-phone-lock") === "true") return;
       el.textContent = phoneDisplay;
     });

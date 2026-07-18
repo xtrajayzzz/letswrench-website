@@ -17,17 +17,17 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a href="/" class="logo" aria-label="LetsWrench Mobile Mechanic — home">
+      <a href="/" class="logo" id="thanks-logo" aria-label="LetsWrench Mobile Mechanic — home">
         <img src="images/logo.png?v=2" alt="Let's Wrench Mobile Mechanic — We come to you" width="120" height="120">
       </a>
-      <a href="tel:+15319996507" class="btn btn-header" data-track="call">Call Now</a>
+      <a href="tel:+15319996507" class="btn btn-header" data-track="call" aria-label="Tap to call">Call Now</a>
     </div>
   </header>
 
   <main id="main-content">
     <section class="thanks-hero">
       <div class="wrap">
-        <h1>Got it — we'll call you back shortly. <span aria-hidden="true">🔧</span></h1>
+        <h1>Got it — we'll call you back shortly.</h1>
         <p>A real mechanic (not a call center) will reach out fast.</p>
         <p>Car not drivable or need us right now?</p>
         <a href="tel:+15319996507" class="action-call action-call--primary" data-track="call">
@@ -35,7 +35,7 @@
           <span class="action-call__number">(531) 999-6507</span>
         </a>
         <div class="thanks-actions">
-          <a href="/" class="thanks-back">← Back to the site</a>
+          <a href="/" class="thanks-back" id="thanks-back">← Back to the site</a>
           <nav class="thanks-legal" aria-label="Legal">
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms">Terms</a>
@@ -52,7 +52,43 @@
     </a>
   </div>
 
+  <script>
+    (function () {
+      var market = "";
+      try {
+        market = new URLSearchParams(window.location.search).get("market") || "";
+      } catch (e) {}
+      if (!market) {
+        try {
+          market = sessionStorage.getItem("letswrench_market") || "";
+        } catch (e) {}
+      }
+      if (market !== "mesa" && market !== "omaha") market = "omaha";
+
+      document.body.setAttribute("data-market", market);
+      try {
+        sessionStorage.setItem("letswrench_market", market);
+      } catch (e) {}
+
+      var home = market === "mesa" ? "/mesa" : "/omaha";
+      var logo = document.getElementById("thanks-logo");
+      var back = document.getElementById("thanks-back");
+      if (logo) {
+        logo.setAttribute("href", home);
+        logo.setAttribute(
+          "aria-label",
+          market === "mesa"
+            ? "LetsWrench Mobile Mechanic — Mesa"
+            : "LetsWrench Mobile Mechanic — Omaha"
+        );
+      }
+      if (back) {
+        back.setAttribute("href", home);
+        back.textContent = market === "mesa" ? "← Back to Mesa" : "← Back to Omaha";
+      }
+    })();
+  </script>
   <script src="/js/site-config.js?v=8"></script>
-  <script src="/js/tracking.js?v=10"></script>
+  <script src="/js/tracking.js?v=11"></script>
 </body>
 </html>
